@@ -597,7 +597,7 @@ export default {
       this.right = right
       this.bottom = bottom
 
-      this.$emit('dragging', this.left, this.top)
+      this.$emit('dragging', this.left, this.top, e)
     },
     moveHorizontally (val) {
       const [deltaX, _] = snapToGrid(this.grid, val, this.top, this.scale)
@@ -696,7 +696,7 @@ export default {
       this.width = width
       this.height = height
 
-      this.$emit('resizing', this.left, this.top, this.width, this.height)
+      this.$emit('resizing', this.left, this.top, this.width, this.height, e)
     },
     changeWidth (val) {
       const [newWidth, _] = snapToGrid(this.grid, val, 0, this.scale)
